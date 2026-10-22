@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pasfoto Signtex</title>
+<meta name="description" content="Pasfoto til pas, kørekort, visum og opholdskort på Frederiksborgvej 10, 2400 København NV. Ingen tidsbestilling, klar mens du venter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Pasfoto Signtex","description":"Pasfoto til pas, kørekort, visum og opholdskort.","address":{"@type":"PostalAddress","streetAddress":"Frederiksborgvej 10, st. tv.","postalCode":"2400","addressLocality":"København NV","addressCountry":"DK"}}
+</script>
+<style>
+/* Layout: én rolig kolonne. Pasets bordeaux er eneste farve; et 35×45-fotofelt er logo og blikfang. */
+:root{
+  --bg:#ffffff; --soft:#f5f3f2; --ink:#1c1416; --muted:#6b5e61; --line:#e7e1e0;
+  --wine:#7d1d2e; --wine-ink:#ffffff; --mark:#fff0b8;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141012; --soft:#1e181a; --ink:#f3eded; --muted:#b3a5a8; --line:#33292c;
+  --wine:#e2768a; --wine-ink:#141012; --mark:#4a3d12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141012; --soft:#1e181a; --ink:#f3eded; --muted:#b3a5a8; --line:#33292c;
+  --wine:#e2768a; --wine-ink:#141012; --mark:#4a3d12; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+.w{max-width:760px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+h1,h2{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.02em}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--wine);outline-offset:3px;border-radius:6px}
+.todo{background:var(--mark);border-radius:4px;padding:0 .25em}
+
+/* top */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font:800 1.15rem var(--display)}
+.frame{width:21px;height:27px;border:2.5px solid var(--wine);border-radius:3px;position:relative;flex:none}
+.frame::before{content:"";position:absolute;left:50%;top:4px;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--wine)}
+.frame::after{content:"";position:absolute;left:50%;bottom:-1px;width:14px;height:7px;margin-left:-7px;border-radius:7px 7px 0 0;background:var(--wine)}
+.call{font-weight:600;text-decoration:none;color:var(--wine)}
+
+/* hero */
+.hero{padding-block:56px 64px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.hero > div{min-width:0}
+.hero h1{font-size:clamp(2.6rem,8vw,4.6rem);font-weight:800;line-height:1}
+.hero h1 span{color:var(--wine)}
+.hero p{color:var(--muted);font-size:1.15rem;margin:22px 0 32px;max-width:30ch}
+.btn{display:inline-block;background:var(--wine);color:var(--wine-ink);text-decoration:none;font-weight:600;padding:14px 26px;border-radius:999px}
+.photo{width:170px;aspect-ratio:35/45;max-width:100%;background:var(--soft);border:1px solid var(--line);position:relative;border-radius:2px}
+.photo svg{position:absolute;inset:12% 14% 0;width:72%;height:88%}
+.photo small{position:absolute;left:0;right:0;bottom:-30px;text-align:center;font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}
+.facts div{padding:22px 20px 22px 0;min-width:0}
+.facts div + div{padding-left:20px;border-left:1px solid var(--line)}
+.lbl{display:block;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.facts b{font-weight:600}
+
+/* sections */
+section{padding-block:64px 8px}
+section h2{font-size:1.9rem;font-weight:800;margin-bottom:20px}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:flex;align-items:baseline;gap:12px;padding-block:16px;border-bottom:1px solid var(--line)}
+.list li:first-child{border-top:1px solid var(--line)}
+.list .n{font-weight:600}
+.list .d{color:var(--muted);font-size:.95rem}
+.list .fill{flex:1}
+.list .p{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.note{color:var(--muted);font-size:.95rem;margin-top:16px}
+
+.find{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.find > div{min-width:0}
+.addr{font:800 1.6rem/1.25 var(--display);margin:0 0 20px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.ghost{background:none;border:1.5px solid var(--line);color:var(--ink);font:500 .95rem var(--body);padding:12px 20px;border-radius:999px;cursor:pointer}
+.ghost:hover{border-color:var(--wine)}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours td{padding:10px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:600}
+
+footer{margin-top:80px;padding-block:28px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+
+@media (max-width:640px){
+  .hero{grid-template-columns:1fr;padding-block:32px 56px}
+  .photo{display:none}
+  .facts{grid-template-columns:1fr}
+  .facts div,.facts div + div{padding:16px 0;border-left:0}
+  .facts div + div{border-top:1px solid var(--line)}
+  .find{grid-template-columns:1fr}
+  .list .fill{display:none}
+  .list li{flex-wrap:wrap;justify-content:space-between}
+}
+</style>
+</head>
+<body>
+
+<header class="w top">
+  <a class="brand" href="#"><span class="frame" aria-hidden="true"></span>Pasfoto Signtex</a>
+  <a class="call" href="#find">Find os</a>
+</header>
+
+<main class="w">
+  <div class="hero">
+    <div>
+      <h1>Pasfoto, <span>mens du venter.</span></h1>
+      <p>Til pas, kørekort, visum og opholdskort. Ingen tidsbestilling.</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Frederiksborgvej+10,+2400+K%C3%B8benhavn+NV" target="_blank" rel="noopener">Vis vej i Google Maps</a>
+    </div>
+    <div class="photo" aria-hidden="true">
+      <svg viewBox="0 0 50 60"><circle cx="25" cy="20" r="11" fill="var(--wine)" opacity=".85"/><path d="M3 60c0-14 10-22 22-22s22 8 22 22z" fill="var(--wine)" opacity=".85"/></svg>
+      <small>35 × 45 mm</small>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div><span class="lbl">Adresse</span><b>Frederiksborgvej 10, st. tv.</b><br>2400 København NV</div>
+    <div><span class="lbl">Åbent</span><b>Man–fre <span class="todo">10–18</span></b><br>Lør <span class="todo">10–14</span></div>
+    <div><span class="lbl">Telefon</span><b class="todo">00 00 00 00</b></div>
+  </div>
+
+  <section id="priser">
+    <h2>Priser</h2>
+    <ul class="list">
+      <li><span class="n">Pasfoto</span><span class="fill"></span><span class="p"><span class="todo">000</span> kr.</span></li>
+      <li><span class="n">Kørekort</span><span class="fill"></span><span class="p"><span class="todo">000</span> kr.</span></li>
+      <li><span class="n">Visum og opholdskort</span><span class="d">alle lande</span><span class="fill"></span><span class="p"><span class="todo">000</span> kr.</span></li>
+      <li><span class="n"><span class="todo">Signtex: skilte og tryk</span></span><span class="fill"></span><span class="p">Efter aftale</span></li>
+    </ul>
+    <p class="note">Billedet tages, tjekkes og printes, mens du venter. Tag gerne en mørk, ensfarvet trøje på.</p>
+  </section>
+
+  <section id="find">
+    <h2>Find os</h2>
+    <div class="find">
+      <div>
+        <p class="addr" id="addr">Frederiksborgvej 10, st. tv.<br>2400 København NV</p>
+        <div class="row">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Frederiksborgvej+10,+2400+K%C3%B8benhavn+NV" target="_blank" rel="noopener">Google Maps</a>
+          <button class="ghost" id="copy" type="button">Kopiér adresse</button>
+        </div>
+      </div>
+      <table class="hours">
+        <tr><td>Mandag–fredag</td><td><span class="todo">10.00–18.00</span></td></tr>
+        <tr><td>Lørdag</td><td><span class="todo">10.00–14.00</span></td></tr>
+        <tr><td>Søndag</td><td>Lukket</td></tr>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer><div class="w">© Pasfoto Signtex · Frederiksborgvej 10, st. tv., 2400 København NV · CVR <span class="todo">00000000</span></div></footer>
+
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var b=this,t='Frederiksborgvej 10, st. tv., 2400 København NV';
+  var sel=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('addr'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Markeret';};
+  try{navigator.clipboard.writeText(t).then(function(){b.textContent='Kopieret';},sel);}catch(e){sel();}
+});
+</script>
+</body>
+</html>
